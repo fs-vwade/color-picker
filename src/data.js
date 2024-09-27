@@ -1,4 +1,4 @@
-export const colors = [
+export const colors_list = [
 	{
 		color: "autumn",
 		hex: "#f02800",
