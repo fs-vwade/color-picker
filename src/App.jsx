@@ -5,23 +5,17 @@ import "./App.css";
 
 export default function App() {
 	const [colors, setColor] = useState(colors_list);
-	const [selectedColor, setSelectedColor] = useState(null);
+	const [selectedColor, setSelectedColor] = useState({
+		color: "No Color Selected",
+		hex: "#fff",
+	});
 
 	return (
 		<div>
-			<nav>
-				<h1>Color Picker</h1>
-				<div>
-					Selected Color:{" "}
-					{selectedColor && (
-						<span
-							style={{ backgroundColor: selectedColor.hex, padding: "1rem" }}
-						>
-							{selectedColor.color}
-						</span>
-					)}
-				</div>
-			</nav>
+			<NavBar
+				selectedColorName={selectedColor.color}
+				selectedColorHex={selectedColor.hex}
+			/>
 			<main>
 				<div className="container">
 					{colors.map((color, idx) => {
